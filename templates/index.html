@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block content %}
+
+<h2>Image Text Predictor</h2>
+<p>Reading or Recognizing Text from Images is a challenging Task in the field of Computer Vision. This is mainly because Text in Images exhibit diversity and variability. Backgrounds of Images are virtually unpredictable as some images may have dark background, some may have light background and there are even cases where image fonts and background have same color with a small outline differentiating Text from the Background.</p>
+<p>You can read about <b>Image Text Recognition Model</b> I created in my <a href="https://medium.com/@abhishek.a.9418/image-text-recognition-738a368368f5"><strong>Medium Article<strong></strong></a></strong></a></p>
+<p> Feel free to have a look at the complete solution in my <a href="https://github.com/AbhishekKarthik/ImageTextRecognition"><strong>GitHub Repository</strong></a>. You can upload Images containing text to see the predictions of Model. To Get Started click on Upload Image button and upload image of your choice!!</p>
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <label for="imageUpload" class="upload-label">
+            Upload Image
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict Text</button>
+        </div>
+    </div>
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+    </h3>
+
+</div>
+
+{% endblock %}
